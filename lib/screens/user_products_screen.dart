@@ -21,14 +21,24 @@ class UserProductsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Your Products'),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed(EditProductsScreen.routeName);
-            },
-            icon: const Icon(Icons.add),
-          )
-        ],
+        // actions: [
+        //   IconButton(
+        //     onPressed: () {
+        //       Navigator.of(context).pushNamed(EditProductsScreen.routeName);
+        //     },
+        //     icon: const Icon(Icons.add),
+        //   )
+        // ],
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.of(context).pushNamed(EditProductsScreen.routeName);
+        },
+        elevation: 10,
+        label: const Text("New Product"),
+        icon: const Icon(
+          Icons.add,
+        ),
       ),
       drawer: AppDrawer(),
       body: FutureBuilder(

@@ -52,8 +52,11 @@ class AppDrawer extends StatelessWidget {
           ),
           const Divider(),
           ListTile(
-            leading: const Icon(Icons.exit_to_app),
-            title: const Text('Logout'),
+            leading: const Icon(Icons.exit_to_app, color: Colors.red),
+            title: const Text(
+              'Logout',
+              style: TextStyle(color: Colors.red),
+            ),
             onTap: () {
               Navigator.of(context).pop();
               Navigator.of(context).pushReplacementNamed('/');
