@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:shoppie/providers/products_provider.dart';
 import 'package:shoppie/screens/cart_screen.dart';
 import 'package:shoppie/widgets/app_drawer.dart';
-import 'package:shoppie/widgets/badge.dart';
 
 import 'package:shoppie/widgets/products_grid.dart';
 import 'package:shoppie/providers/cart.dart';
@@ -77,7 +76,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
           Consumer<Cart>(
             builder: (_, cart, dynamic ch) => Badge(
               child: ch,
-              value: cart.itemCount.toString(),
+              label: Text(cart.itemCount.toString()),
             ),
             child: IconButton(
               icon: const Icon(Icons.shopping_cart),
@@ -90,7 +89,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
       ),
       drawer: const AppDrawer(),
       body: _isLoading
-          ?  Center(
+          ? Center(
               child: CircularProgressIndicator(
                 color: Theme.of(context).colorScheme.secondary,
               ),
